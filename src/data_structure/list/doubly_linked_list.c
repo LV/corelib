@@ -56,3 +56,14 @@ void doubly_linked_list_delete_tail_node(DoublyLinkedList* list) {
     list->tail = new_tail;
     return;
 }
+
+void doubly_linked_list_free(DoublyLinkedList* list) {
+    // Free all elements in the list
+    while(list->head != NULL) {
+        DoublyLinkedListNode* next_node = list->head->next;
+        list->head->next = NULL;
+        list->head->prev = NULL;
+        free(list->head);
+        list->head = next_node;
+    }
+}

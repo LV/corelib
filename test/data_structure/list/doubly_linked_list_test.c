@@ -14,18 +14,20 @@ void setUp(void) {
     char* b_str = "Bob";
     char* c_str = "Carmelo";
 
-    DoublyLinkedListNode* a = doubly_linked_list_node_initialize(a_str);
-    DoublyLinkedListNode* b = doubly_linked_list_node_initialize(b_str);
-    DoublyLinkedListNode* c = doubly_linked_list_node_initialize(c_str);
+    a = doubly_linked_list_node_initialize(a_str);
+    b = doubly_linked_list_node_initialize(b_str);
+    c = doubly_linked_list_node_initialize(c_str);
 
-    DoublyLinkedList* list = doubly_linked_list_initialize(a);
+    list = doubly_linked_list_initialize(a);
 }
 
 void tearDown(void) {
-    free(a);
-    free(b);
-    free(c);
-    free(list);
+    if (list) {
+        doubly_linked_list_free(list);
+        list = NULL;
+    }
+
+    a = b = c = NULL;
 }
 
 void test_doubly_linked_list_insertions_and_deletions(void) {
