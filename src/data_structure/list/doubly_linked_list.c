@@ -26,6 +26,11 @@ DoublyLinkedList* doubly_linked_list_initialize(DoublyLinkedListNode* node) {
 }
 
 void doubly_linked_list_insert_to_tail(DoublyLinkedList* list, DoublyLinkedListNode* node) {
+    if (node == NULL) return;
+    if (list == NULL) {
+        doubly_linked_list_initialize(node);
+        return;
+    }
     if (list->head == NULL) {
         // list is empty
         list->head = node;
@@ -39,6 +44,8 @@ void doubly_linked_list_insert_to_tail(DoublyLinkedList* list, DoublyLinkedListN
 }
 
 void doubly_linked_list_delete_tail_node(DoublyLinkedList* list) {
+    if (list == NULL) return;
+
     // Assumes that if head is NULL, tail must be NULL
     if (list->head == NULL) return;
     if (list->head == list->tail) {
@@ -58,6 +65,8 @@ void doubly_linked_list_delete_tail_node(DoublyLinkedList* list) {
 }
 
 void doubly_linked_list_free(DoublyLinkedList* list) {
+    if (list == NULL) return;
+
     // Free all elements in the list
     while(list->head != NULL) {
         DoublyLinkedListNode* next_node = list->head->next;
