@@ -1,11 +1,6 @@
+#include <corelib/data_structure/list/doubly_linked_list.h>
 #include <stddef.h>
 #include <stdlib.h>
-
-typedef struct DoublyLinkedListNode {
-    char* data;
-    struct DoublyLinkedListNode* next;
-    struct DoublyLinkedListNode* prev;
-} DoublyLinkedListNode;
 
 DoublyLinkedListNode* doubly_linked_list_node_initialize(char* c) {
     struct DoublyLinkedListNode* node = malloc(sizeof(DoublyLinkedListNode));
@@ -16,12 +11,6 @@ DoublyLinkedListNode* doubly_linked_list_node_initialize(char* c) {
 
     return node;
 }
-
-
-typedef struct DoublyLinkedList {
-    DoublyLinkedListNode* head;
-    DoublyLinkedListNode* tail;
-} DoublyLinkedList;
 
 DoublyLinkedList* doubly_linked_list_initialize(DoublyLinkedListNode* node) {
     struct DoublyLinkedList* list = malloc(sizeof(DoublyLinkedList));
