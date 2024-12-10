@@ -4,6 +4,8 @@
 
 DoublyLinkedListNode* doubly_linked_list_node_initialize(char* c) {
     struct DoublyLinkedListNode* node = malloc(sizeof(DoublyLinkedListNode));
+    if (node == NULL)
+        return NULL; // malloc failure
 
     node->data = c;
     node->next = NULL;
@@ -14,6 +16,8 @@ DoublyLinkedListNode* doubly_linked_list_node_initialize(char* c) {
 
 DoublyLinkedList* doubly_linked_list_initialize(DoublyLinkedListNode* node) {
     struct DoublyLinkedList* list = malloc(sizeof(DoublyLinkedList));
+    if (list == NULL)
+        return NULL; // malloc failure
 
     list->head = node;
     list->tail = node;
