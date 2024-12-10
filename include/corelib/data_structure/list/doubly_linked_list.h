@@ -15,5 +15,7 @@ typedef struct DoublyLinkedList {
 
 DoublyLinkedListNode* doubly_linked_list_node_initialize(char* c);
 DoublyLinkedList* doubly_linked_list_initialize(DoublyLinkedListNode* node);
+void doubly_linked_list_insert_to_tail(DoublyLinkedList* list, DoublyLinkedListNode* node);
+void doubly_linked_list_delete_tail_node(DoublyLinkedList* list);
 
 #endif // DOUBLY_LINKED_LIST_H
