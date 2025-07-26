@@ -42,3 +42,6 @@
 
 # corelib
 build/
+
+# Doxygen
+docs/html

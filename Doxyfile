@@ -1,0 +1,49 @@
+# Project settings
+PROJECT_NAME           = "corelib"
+PROJECT_BRIEF          = "General purpose C++ library"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = src include
+FILE_PATTERNS          = *.h *.hpp *.cpp *.cc
+RECURSIVE              = YES
+
+# Markdown support
+EXTENSION_MAPPING      = md=markdown
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Output format
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+# Extract all elements, even without comments
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_ANON_NSPACES   = YES
+
+# Comments parsing
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = YES
+INHERIT_DOCS           = YES
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = YES
+
+# Diagrams (requires Graphviz)
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 2
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+DOT_MULTI_TARGETS      = YES
+
+# Warnings (optional, useful for cleanup)
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# Miscellaneous
+QUIET                  = NO
+GENERATE_TREEVIEW      = YES
