@@ -1,7 +1,7 @@
 # corelib
 General Purpose C++ Library.
 
-This library emphasizes computational performance over strict adherence to traditional mathematical expressions - without compromising correctness.
+This library emphasizes computational performance over strict adherence to traditional mathematical expressions — without compromising correctness.
 
 For example, when computing the number of permutations:
 
