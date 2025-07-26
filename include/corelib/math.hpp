@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * @file include/corelib/math.hpp
  * @brief All mathematical functions
@@ -8,6 +10,13 @@
 #include <concepts>
 #include <stdexcept>
 
+/**
+ * @brief Calculates the factorial of a non-negative integer n.
+ * @tparam T An integral type.
+ * @param n The value for which to calculate n!
+ * @return The factorial of n.
+ * @throws std::invalid_argument if n is negative.
+ */
 template<std::integral T>
 constexpr T factorial(T n) {
     if (n < 0) {
@@ -24,6 +33,14 @@ constexpr T factorial(T n) {
 }
 
 
+/**
+ * @brief Calculates the number of permutations nPk = n! / (n-k)!
+ * @tparam T An integral type.
+ * @param n The total number of items.
+ * @param k Number of items to arrange.
+ * @return The number of ordered permutations.
+ * @throws std::invalid_argument if n or k is negative or if k > n.
+ */
 template<std::integral T>
 constexpr T permutation(T n, T k) {
     if (n < 0 || k < 0) {
