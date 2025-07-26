@@ -22,3 +22,22 @@ constexpr T factorial(T n) {
 
     return result;
 }
+
+
+template<std::integral T>
+constexpr T permutation(T n, T k) {
+    if (n < 0 || k < 0) {
+        throw std::invalid_argument("permutation() isn't defined for negative n or k");
+    }
+
+    if (k > n) {
+        throw std::invalid_argument("k must not be bigger than n when calculating permutation()");
+    }
+
+    T result = 1;
+    for (T i = n; i > (n - k); --i) {
+        result *= i;
+    }
+
+    return result;
+}
