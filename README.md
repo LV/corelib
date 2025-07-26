@@ -27,6 +27,10 @@ for (int i = n; i > (n - k); --i) {
 The goal is to provide clean and minimal interfaces for mathematical functions, algorithms, and data structures, with performance-aware implementations when appropriate.
 
 ## Pre-requisites
+### Building
+- `gcc`
+- `make`
+
 ### Documentation
 - `doxygen`
 - `graphviz`
