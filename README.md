@@ -1,9 +1,20 @@
 # corelib
 General Purpose C++ Library.
 
-Computational performance is prioritized over mathematical form without the cost of correctness.
+This library emphasizes computational performance over strict adherence to traditional mathematical expressions - without compromising correctness.
 
-For instance, when deriving ${}^nP_k = \frac{n!}{(n-k)!$, instead of calculating the answer as `factorial(n)/factorial(n-k)`, we do `for(int i = n; i > k; i--)`.
+For example, when computing the number of permutations:
+
+$${}^nP_k = \frac{n!}{(n-k)!}$$
+
+Rather than evaluating this directly using `factorial(n) / (factorial(n - k)` which performs and allocates redundant resources, we would use an efficient loop-based approach:
+
+```cpp
+int result = 1;
+for (int i = n; i > (n - k); --i) {
+    result *= i;
+}
+```
 
 ## Pre-requisites
 ### Documentation
