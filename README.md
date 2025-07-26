@@ -9,7 +9,7 @@ Take, for instance, the computation of permutations:
 
 $${}^nP_k = \frac{n!}{(n-k)!}$$
 
-Rather than evaluating this using the traditional expression which contains redundancies:
+Rather than evaluating this using the traditional mathemtical expression, which contains computational redundancies:
 
 ```cpp
 factorial(n) / factorial(n - k);
