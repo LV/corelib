@@ -47,8 +47,8 @@ build/
 
 
 ### Doxygen ###
+.cache/
 docs/html
-
 
 ### MacOS ###
 .DS_Store

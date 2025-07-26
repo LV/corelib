@@ -28,6 +28,7 @@ The goal is to provide clean and minimal interfaces for mathematical functions, 
 
 ## Pre-requisites
 ### Building
+- `cmake`
 - `gcc`
 - `make`
 
