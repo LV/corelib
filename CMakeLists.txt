@@ -18,7 +18,6 @@ add_executable(test_corelib tests/corelib/test_main.cpp)
 target_link_libraries(test_corelib PRIVATE corelib)
 target_include_directories(test_corelib PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/external
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 # Add test target
