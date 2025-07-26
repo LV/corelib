@@ -1,13 +1,21 @@
 # corelib
-General Purpose C++ Library.
+_General Purpose C++ Library._
 
-This library emphasizes computational performance over strict adherence to traditional mathematical expressions — without compromising correctness.
+`corelib` emphasizes **computational efficiency** over strict adherence to mathematical formalisms — without sacrificing correctness.
 
-For example, when computing the number of permutations:
+## Performance-Oriented Philosophy
+
+Take, for instance, the computation of permutations:
 
 $${}^nP_k = \frac{n!}{(n-k)!}$$
 
-Rather than evaluating this directly using `factorial(n) / (factorial(n - k)` which performs and allocates redundant resources, we would use an efficient loop-based approach:
+Rather than evaluating this using the traditional expression which contains redundancies:
+
+```cpp
+factorial(n) / factorial(n - k);
+```
+
+— we apply a more efficient approach — in this case a loop-based calculation:
 
 ```cpp
 int result = 1;
@@ -15,6 +23,8 @@ for (int i = n; i > (n - k); --i) {
     result *= i;
 }
 ```
+
+The goal is to provide clean and minimal interfaces for using mathematical functions, algorithms, and data structures, with performance-aware implementations when appropriate.
 
 ## Pre-requisites
 ### Documentation
