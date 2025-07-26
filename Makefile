@@ -7,7 +7,7 @@ DOCS_DIR = docs/html
 
 
 .PHONY: all
-all: build
+all: build docs
 
 .PHONY: build
 build:
