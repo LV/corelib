@@ -74,7 +74,7 @@ constexpr T permutation(T n, T k) {
 template<std::integral T>
 constexpr T binomial_coefficient(T n, T k) {
     if (n < 0 || k < 0) {
-        throw std::invalid_argument("combination() isn't defined for negative n or k");
+        throw std::invalid_argument("binomial_coefficient() isn't defined for negative n or k");
     }
 
     if (k > n) {
