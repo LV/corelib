@@ -12,7 +12,7 @@
 
 /**
  * @brief Calculates the factorial of a non-negative integer $n$.
- * @brief $$n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 2 \cdot 1$$
+ * @details $$n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 2 \cdot 1$$
  * @tparam T An integral type.
  * @param n The value for which to calculate $n!$.
  * @return The factorial of $n$.
@@ -36,7 +36,7 @@ constexpr T factorial(T n) {
 
 /**
  * @brief Calculates the number of permutations of $k$ objects from $n$ total items.
- * @brief $${}^nP_k = \frac{n!}{(n-k)!}$$
+ * @details $${}^nP_k = \frac{n!}{(n-k)!}$$
  * @tparam T An integral type.
  * @param n The total number of items.
  * @param k Number of items to arrange.
@@ -64,7 +64,7 @@ constexpr T permutation(T n, T k) {
 
 /**
  * @brief Calculates the number of ways to combine $k$ objects from $n$ total items (order is not relevant).
- * @brief $${}^nC_k = \binom{n}{k} = \frac{n!}{(n-k)!k!}$$
+ * @details $${}^nC_k = \binom{n}{k} = \frac{n!}{(n-k)!k!}$$
  * @tparam T An integral type.
  * @param n The total number of items.
  * @param k Number of items to choose.
