@@ -81,9 +81,6 @@ constexpr T binomial_coefficient(T n, T k) {
         return 0;
     }
 
-    // For now, just use the multiplicative method
-    // TODO: Use modular inverse for a much more efficient implementation
-    //         maybe even Lucas's theorem for really large n
     if (k == 0 || k == n) {
         return 1;
     }
@@ -97,6 +94,9 @@ constexpr T binomial_coefficient(T n, T k) {
         k = n - k;
     }
 
+    // For now, just use the multiplicative method
+    // TODO: Use modular inverse for a much more efficient implementation
+    //         maybe even Lucas's theorem for really large n
     T numerator = 1;
     T denominator = 1;
 
