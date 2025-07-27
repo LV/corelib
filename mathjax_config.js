@@ -1,21 +1,29 @@
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+window.MathJax = {
+  tex: {
+    inlineMath: [
+      ["$", "$"],
+      ["\\(", "\\)"],
+    ],
+    displayMath: [
+      ["$$", "$$"],
+      ["\\[", "\\]"],
+    ],
     processEscapes: true,
     processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    tags: "ams",
+    packages: { "[+]": ["ams"] },
   },
-  TeX: {
-    equationNumbers: { autoNumber: "AMS" },
-    extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
+  svg: {
+    fontCache: "global",
   },
-  "HTML-CSS": {
-    availableFonts: ["TeX"],
-    preferredFont: "TeX",
-    webFont: "TeX",
-    imageFont: null
-  }
-});
+  options: {
+    skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "tex2jax_process",
+  },
+  startup: {
+    ready: function () {
+      MathJax.startup.defaultReady();
+    },
+  },
+};

@@ -17,10 +17,11 @@ GENERATE_LATEX         = NO
 
 # Mathjax
 USE_MATHJAX            = YES
-MATHJAX_FORMAT         = HTML-CSS
-MATHJAX_RELPATH        = https://cdn.jsdelivr.net/npm/mathjax@2
-MATHJAX_EXTENSIONS     = TeX/AMSmath TeX/AMSsymbols
+MATHJAX_FORMAT         = SVG
+MATHJAX_RELPATH        = https://cdn.jsdelivr.net/npm/mathjax@3
+MATHJAX_EXTENSIONS     =
 MATHJAX_CODEFILE       = mathjax_config.js
+MATHJAX_VERSION        = MathJax_3
 
 # Extract all elements, even without comments
 EXTRACT_ALL            = YES
