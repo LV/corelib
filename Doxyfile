@@ -15,6 +15,13 @@ GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 GENERATE_LATEX         = NO
 
+# Mathjax
+USE_MATHJAX            = YES
+MATHJAX_FORMAT         = HTML-CSS
+MATHJAX_RELPATH        = https://cdn.jsdelivr.net/npm/mathjax@2
+MATHJAX_EXTENSIONS     = TeX/AMSmath TeX/AMSsymbols
+MATHJAX_CODEFILE       = mathjax_config.js
+
 # Extract all elements, even without comments
 EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = YES
