@@ -29,7 +29,7 @@ The goal is to provide clean and minimal interfaces for mathematical functions, 
 ## Pre-requisites
 ### Building
 - `cmake`
-- `gcc`
+- `gcc-15`
 - `make`
 
 ### Documentation
