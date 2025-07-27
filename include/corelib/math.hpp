@@ -64,7 +64,7 @@ constexpr T permutation(T n, T k) {
 
 /**
  * @brief Calculates the number of ways to combine $k$ objects from $n$ total items (order is not relevant).
- * @details $${}^nC_k = \binom{n}{k} = \frac{n!}{(n-k)!k!}$$
+ * @details $${}^nC_k = \binom{n}{k} = \binom{n}{n-k} = \frac{n!}{(n-k)!k!}$$
  * @tparam T An integral type.
  * @param n The total number of items.
  * @param k Number of items to choose.
