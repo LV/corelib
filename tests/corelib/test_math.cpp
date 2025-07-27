@@ -32,16 +32,19 @@ TEST_CASE("permutation returns correct values") {
     CHECK(permutation(4, 4) == 24);
     CHECK(permutation(10, 0) == 1);
     CHECK(permutation(0, 0) == 1);
+    CHECK(permutation(2, 5) == 0); // k > n
 
     // Test with unsigned int
     CHECK(permutation(5u, 2u) == 20u);
     CHECK(permutation(8u, 3u) == 336u);
+    CHECK(permutation(2u, 5u) == 0u); // k > n
 
     // Test with long long
     CHECK(permutation(12LL, 5LL) == 95040LL);
 
     // Test with short
     CHECK(permutation(static_cast<short>(6), static_cast<short>(3)) == static_cast<short>(120));
+    CHECK(permutation(static_cast<short>(3), static_cast<short>(7)) == static_cast<short>(0)); // k > n
 }
 
 TEST_CASE("permutation throws on invalid input") {
@@ -52,11 +55,6 @@ TEST_CASE("permutation throws on invalid input") {
     // Negative k
     CHECK_THROWS_AS(permutation(2, -1), std::invalid_argument);
     CHECK_THROWS_AS(permutation(2L, -1L), std::invalid_argument);
-
-    // k > n
-    CHECK_THROWS_AS(permutation(2, 5), std::invalid_argument);
-    CHECK_THROWS_AS(permutation(2u, 5u), std::invalid_argument);
-    CHECK_THROWS_AS(permutation(static_cast<short>(3), static_cast<short>(7)), std::invalid_argument);
 }
 
 TEST_CASE("binomial_coefficient returns correct values for basic cases") {
@@ -85,23 +83,30 @@ TEST_CASE("binomial_coefficient returns correct values for basic cases") {
 }
 
 TEST_CASE("binomial_coefficient edge cases") {
-    // Test n choose 0 and n choose n (small values to avoid overflow)
+    // Test n choose 0 and n choose n
     CHECK(binomial_coefficient(10, 0) == 1);
     CHECK(binomial_coefficient(10, 10) == 1);
     CHECK(binomial_coefficient(1, 0) == 1);
     CHECK(binomial_coefficient(1, 1) == 1);
     CHECK(binomial_coefficient(0, 0) == 1);
 
-    // Test n choose 1 and n choose (n-1) (avoiding large values)
+    // Test n choose 1 and n choose (n-1)
     CHECK(binomial_coefficient(10, 1) == 10);
     CHECK(binomial_coefficient(10, 9) == 10);
     CHECK(binomial_coefficient(8, 1) == 8);
     CHECK(binomial_coefficient(8, 7) == 8);
 
-    // Test symmetry property: C(n,k) = C(n,n-k) (for small values where implementation works)
+    // Test symmetry property: C(n,k) = C(n,n-k)
     CHECK(binomial_coefficient(10, 3) == binomial_coefficient(10, 7));
     CHECK(binomial_coefficient(12, 4) == binomial_coefficient(12, 8));
     CHECK(binomial_coefficient(8, 2) == binomial_coefficient(8, 6));
+
+    // k > n
+    CHECK(binomial_coefficient(2, 5) == 0);
+    CHECK(binomial_coefficient(2u, 5u) == 0);
+    CHECK(binomial_coefficient(static_cast<short>(3), static_cast<short>(7)) == 0);
+    CHECK(binomial_coefficient(0, 1) == 0);
+    CHECK(binomial_coefficient(10L, 15L) == 0);
 }
 
 TEST_CASE("binomial_coefficient mathematical properties") {
@@ -132,17 +137,10 @@ TEST_CASE("binomial_coefficient throws on invalid input") {
     // Both negative
     CHECK_THROWS_AS(binomial_coefficient(-2, -1), std::invalid_argument);
     CHECK_THROWS_AS(binomial_coefficient(-5L, -3L), std::invalid_argument);
-
-    // k > n
-    CHECK_THROWS_AS(binomial_coefficient(2, 5), std::invalid_argument);
-    CHECK_THROWS_AS(binomial_coefficient(2u, 5u), std::invalid_argument);
-    CHECK_THROWS_AS(binomial_coefficient(static_cast<short>(3), static_cast<short>(7)), std::invalid_argument);
-    CHECK_THROWS_AS(binomial_coefficient(0, 1), std::invalid_argument);
-    CHECK_THROWS_AS(binomial_coefficient(10L, 15L), std::invalid_argument);
 }
 
 TEST_CASE("binomial_coefficient specific mathematical values") {
-    // Well-known binomial coefficients (avoiding potential overflow)
+    // Well-known binomial coefficients
     CHECK(binomial_coefficient(10, 5) == 252);   // Central binomial coefficient
     CHECK(binomial_coefficient(13, 5) == 1287);  // Another common value
     CHECK(binomial_coefficient(12, 6) == 924);   // Central binomial coefficient for 12

@@ -41,7 +41,7 @@ constexpr T factorial(T n) {
  * @param n The total number of items.
  * @param k Number of items to arrange.
  * @return The number of ordered permutations.
- * @throws std::invalid_argument if $n$ or $k$ is negative or if $k > n$.
+ * @throws std::invalid_argument if $n$ or $k$ is negative.
  */
 template<std::integral T>
 constexpr T permutation(T n, T k) {
@@ -50,7 +50,7 @@ constexpr T permutation(T n, T k) {
     }
 
     if (k > n) {
-        throw std::invalid_argument("k must not be bigger than n when calculating permutation()");
+        return 0;
     }
 
     T result = 1;
@@ -69,7 +69,7 @@ constexpr T permutation(T n, T k) {
  * @param n The total number of items.
  * @param k Number of items to choose.
  * @return The number of unordered combinations.
- * @throws std::invalid_argument if $n$ or $k$ is negative or if $k > n$.
+ * @throws std::invalid_argument if $n$ or $k$ is negative.
  */
 template<std::integral T>
 constexpr T binomial_coefficient(T n, T k) {
@@ -78,7 +78,7 @@ constexpr T binomial_coefficient(T n, T k) {
     }
 
     if (k > n) {
-        throw std::invalid_argument("k must not be bigger than n when calculating combination()");
+        return 0;
     }
 
     // For now, just use the multiplicative method
