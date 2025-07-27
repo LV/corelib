@@ -2,9 +2,10 @@
 PROJECT_NAME           = "corelib"
 PROJECT_BRIEF          = "General purpose C++ library"
 OUTPUT_DIRECTORY       = docs
-INPUT                  = src include
-FILE_PATTERNS          = *.h *.hpp *.cpp *.cc
+INPUT                  = . include
+FILE_PATTERNS          = *.cc *.cpp *.h *.hpp *.md
 RECURSIVE              = YES
+EXCLUDE                = build .cache external/doctest tests
 
 # Markdown support
 EXTENSION_MAPPING      = md=markdown
