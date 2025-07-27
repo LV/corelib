@@ -11,11 +11,11 @@
 #include <stdexcept>
 
 /**
- * @brief Calculates the factorial of a non-negative integer n.
+ * @brief Calculates the factorial of a non-negative integer $n$.
  * @tparam T An integral type.
- * @param n The value for which to calculate n!
- * @return The factorial of n.
- * @throws std::invalid_argument if n is negative.
+ * @param n The value for which to calculate $n!$.
+ * @return The factorial of $n$.
+ * @throws std::invalid_argument if $n$ is negative.
  */
 template<std::integral T>
 constexpr T factorial(T n) {
@@ -39,7 +39,7 @@ constexpr T factorial(T n) {
  * @param n The total number of items.
  * @param k Number of items to arrange.
  * @return The number of ordered permutations.
- * @throws std::invalid_argument if n or k is negative or if k > n.
+ * @throws std::invalid_argument if $n$ or $k$ is negative or if $k > n$.
  */
 template<std::integral T>
 constexpr T permutation(T n, T k) {
@@ -66,7 +66,7 @@ constexpr T permutation(T n, T k) {
  * @param n The total number of items.
  * @param k Number of items to choose.
  * @return The number of unordered combinations.
- * @throws std::invalid_argument if n or k is negative or if k > n.
+ * @throws std::invalid_argument if $n$ or $k$ is negative or if $k > n$.
  */
 template<std::integral T>
 constexpr T binomial_coefficient(T n, T k) {
