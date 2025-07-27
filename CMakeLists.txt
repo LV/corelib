@@ -13,8 +13,11 @@ target_include_directories(corelib INTERFACE
     $<INSTALL_INTERFACE:include>
 )
 
-# Test executable
-add_executable(test_corelib tests/corelib/test_main.cpp)
+# Test executable with multiple source files
+add_executable(test_corelib
+    tests/corelib/test_main.cpp
+    tests/corelib/test_math.cpp
+)
 target_link_libraries(test_corelib PRIVATE corelib)
 target_include_directories(test_corelib PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/external
