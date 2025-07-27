@@ -89,7 +89,7 @@ constexpr T binomial_coefficient(T n, T k) {
         return n;
     }
 
-    // symmetry property; greater calculation efficiency via less iterations
+    // symmetry property; used for efficiency sake
     if (k > n / 2) {
         k = n - k;
     }
