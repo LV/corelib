@@ -84,6 +84,19 @@ constexpr T binomial_coefficient(T n, T k) {
     // For now, just use the multiplicative method
     // TODO: Use modular inverse for a much more efficient implementation
     //         maybe even Lucas's theorem for really large n
+    if (k == 0 || k == n) {
+        return 1;
+    }
+
+    if (k == 1 || k == n - 1) {
+        return n;
+    }
+
+    // symmetry property; greater calculation efficiency via less iterations
+    if (k > n / 2) {
+        k = n - k;
+    }
+
     T numerator = 1;
     T denominator = 1;
 
