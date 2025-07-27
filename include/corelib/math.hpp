@@ -58,3 +58,36 @@ constexpr T permutation(T n, T k) {
 
     return result;
 }
+
+
+/**
+ * @brief Calculates the number of combinations nCk = n! / (k! * (n-k)!)
+ * @tparam T An integral type.
+ * @param n The total number of items.
+ * @param k Number of items to choose.
+ * @return The number of unordered combinations.
+ * @throws std::invalid_argument if n or k is negative or if k > n.
+ */
+template<std::integral T>
+constexpr T binomial_coefficient(T n, T k) {
+    if (n < 0 || k < 0) {
+        throw std::invalid_argument("combination() isn't defined for negative n or k");
+    }
+
+    if (k > n) {
+        throw std::invalid_argument("k must not be bigger than n when calculating combination()");
+    }
+
+    // For now, just use the multiplicative method
+    // TODO: Use modular inverse for a much more efficient implementation
+    //         maybe even Lucas's theorem for really large n
+    T numerator = 1;
+    T denominator = 1;
+
+    for (T i = 1; i <= k; ++i) {
+        numerator *= n - k + i;
+        denominator *= i;
+    }
+
+    return numerator / denominator;
+}
