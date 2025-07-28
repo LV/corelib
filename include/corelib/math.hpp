@@ -1,3 +1,3 @@
 #pragma once
 
-#include "combinatorics.hpp"
+#include "math/combinatorics.hpp"

@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * @file include/corelib/math.hpp
+ * @file include/corelib/math/combinatorics.hpp
  * @brief All mathematical functions
  *
  * @author Luis Victoria
