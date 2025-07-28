@@ -2,7 +2,7 @@
 
 /**
  * @file include/corelib/math/combinatorics.hpp
- * @brief All mathematical functions
+ * @brief Combinatorial functions
  *
  * @author Luis Victoria
  */
